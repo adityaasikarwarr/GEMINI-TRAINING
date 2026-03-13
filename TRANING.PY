@@ -23,3 +23,8 @@ new_list = numbers + numbers2
 
 new_list.sort()
 print("merged and sorted lists are : ", new_list)
+
+fruits = ["apple", "kiwi", "banana", "orange", "mango"]
+ 
+fruits.sort(key=len)
+print("sorted fruits by length : ", fruits)
