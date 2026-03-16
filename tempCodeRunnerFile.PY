@@ -1,3 +1,5 @@
 numbers = [1, 2, 3]
-numbers.append(4)
-print(numbers)
+# numbers.append(4)
+# print(numbers)
+# num = numbers.copy()
+# print(num)
