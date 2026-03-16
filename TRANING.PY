@@ -62,5 +62,8 @@ print(ls)
 ls.clear()
 print(ls)
 
-ls1 = [1,2,4,5,6,7,8,9,10]
+ls1 = [1,2,4,5,6,7,8,9,10,10]
 print(ls1.index(10))
+print(ls1.dir())
+
+
