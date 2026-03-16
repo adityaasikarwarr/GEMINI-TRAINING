@@ -72,3 +72,7 @@ print(type(t1))
 t1[9][2] = 5000
 print(t1)
 
+s1 = {1.2,4,5,7,8,8,8,8}
+print(s1)
+print(type(s1))
+
