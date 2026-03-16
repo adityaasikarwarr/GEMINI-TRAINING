@@ -37,18 +37,20 @@
 # print(str[-1])
 # print(type(str))
 
-# number11 = [1,2,3,6,7,8,9,10]
-# number11.append(5)
-# print(number11)
-# print(type(number11))
+number11 = [1,2,3,6,7,8,9,10]
+number11.append(5)
+print(number11)
+print(type(number11))
 
-# numbers = [1, 2, 3]
-# numbers.append(4)
-# print(numbers)
-# num = numbers.copy()
-# print(num)
+numbers = [1, 2, 3]
+numbers.append(4)
+print(numbers)
+num = numbers.copy()
+print(num)
 
 num1 = [1,2,3,4,5,6,7,8,9,10 , [5 , 7,45,67,89] ]
 num1[2] = 500
+print(num1)
+num1[10][2] = 5000
 num2 = num1.copy()
 print(num2)
