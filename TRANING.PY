@@ -48,9 +48,19 @@ print(numbers)
 num = numbers.copy()
 print(num)
 
-num1 = [1,2,3,4,5,6,7,8,9,10 , [5 , 7,45,67,89] ]
+num1 = [1,2,3,4,5,6,7,8,9,10,[5,7,45,67,89]]
 num1[2] = 500
 print(num1)
 num1[10][2] = 5000
 num2 = num1.copy()
 print(num2)
+
+ls = [1,2,3,4,5,6,7,8,9,]
+print(ls.pop())
+ls.remove(1)
+print(ls)
+ls.clear()
+print(ls)
+
+ls1 = [1,2,4,5,6,7,8,9,10]
+print(ls1.index(10))
