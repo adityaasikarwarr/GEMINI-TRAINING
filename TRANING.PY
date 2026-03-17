@@ -1,78 +1,78 @@
-# numbers = [16,7,8,9,4,55,]
-# numbers2 = [2,5,7,3,2,677,5]
+# # numbers = [16,7,8,9,4,55,]
+# # numbers2 = [2,5,7,3,2,677,5]
 
-# largestNum = max(numbers)
-# print(largestNum)
-
-
-# even_num = []
-# odd_num = []
-
-# for num in numbers:
-#     if num % 2 == 0:
-#         even_num.append(num)
-#     else :
-#          odd_num.append(num)
-
-# print(numbers)
-# print(even_num)
-# print(odd_num)
+# # largestNum = max(numbers)
+# # print(largestNum)
 
 
-# new_list = numbers + numbers2
+# # even_num = []
+# # odd_num = []
 
-# new_list.sort()
-# print("merged and sorted lists are : ", new_list)
+# # for num in numbers:
+# #     if num % 2 == 0:
+# #         even_num.append(num)
+# #     else :
+# #          odd_num.append(num)
 
-# fruits = ["apple", "kiwi", "banana", "orange", "mango"]
+# # print(numbers)
+# # print(even_num)
+# # print(odd_num)
+
+
+# # new_list = numbers + numbers2
+
+# # new_list.sort()
+# # print("merged and sorted lists are : ", new_list)
+
+# # fruits = ["apple", "kiwi", "banana", "orange", "mango"]
  
-# fruits.sort(key=len)
-# print("sorted fruits by length : ", fruits)
+# # fruits.sort(key=len)
+# # print("sorted fruits by length : ", fruits)
 
 
-# str = "Hey How are you ?"
-# print(str[1])
-# print(str[-14])
-# print(str[14])
-# print(str[-1])
-# print(type(str))
+# # str = "Hey How are you ?"
+# # print(str[1])
+# # print(str[-14])
+# # print(str[14])
+# # print(str[-1])
+# # print(type(str))
 
-number11 = [1,2,3,6,7,8,9,10]
-number11.append(5)
-print(number11)
-print(type(number11))
+# number11 = [1,2,3,6,7,8,9,10]
+# number11.append(5)
+# print(number11)
+# print(type(number11))
 
-numbers = [1, 2, 3]
-numbers.append(4)
-print(numbers)
-num = numbers.copy()
-print(num)
+# numbers = [1, 2, 3]
+# numbers.append(4)
+# print(numbers)
+# num = numbers.copy()
+# print(num)
 
-num1 = [1,2,3,4,5,6,7,8,9,10,[5,7,45,67,89]]
-num1[2] = 500
-print(num1)
-num1[10][2] = 5000
-num2 = num1.copy()
-print(num2)
+# num1 = [1,2,3,4,5,6,7,8,9,10,[5,7,45,67,89]]
+# num1[2] = 500
+# print(num1)
+# num1[10][2] = 5000
+# num2 = num1.copy()
+# print(num2)
 
-ls = [1,2,3,4,5,6,7,8,9,]
-print(ls.pop())
-ls.remove(1)
-print(ls)
-ls.clear()
-print(ls)
+# ls = [1,2,3,4,5,6,7,8,9,]
+# print(ls.pop())
+# ls.remove(1)
+# print(ls)
+# ls.clear()
+# print(ls)
 
-ls1 = [1,2,4,5,6,7,8,9,10,10]
-print(ls1.index(10))
-print(dir(ls1))
+# ls1 = [1,2,4,5,6,7,8,9,10,10]
+# print(ls1.index(10))
+# print(dir(ls1))
 
-t1 = (2,3,4,5,6,7,8,9,10,[1,2,4,5,6,8,9])
-print(t1)
-print(type(t1))
-t1[9][2] = 5000
-print(t1)
+# t1 = (2,3,4,5,6,7,8,9,10,[1,2,4,5,6,8,9])
+# print(t1)
+# print(type(t1))
+# t1[9][2] = 5000
+# print(t1)
 
-s1 = {1.2,4,5,7,8,8,8,8}
-print(s1)
-print(type(s1))
+# s1 = {1.2,4,5,7,8,8,8,8}
+# print(s1)
+# print(type(s1))
 
