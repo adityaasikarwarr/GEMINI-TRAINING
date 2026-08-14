@@ -1,0 +1,279 @@
+body {
+  margin: 0;
+
+  height: 100vh;
+
+  overflow: hidden;
+
+  font-family: Poppins, Arial;
+
+  background: linear-gradient(135deg, #8be9fd, #c77dff);
+}
+
+.hero {
+  height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 100px;
+}
+
+.text {
+  color: white;
+
+  width: 350px;
+}
+
+h1 {
+  font-size: 45px;
+}
+
+button {
+  padding: 15px 25px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  margin: 10px;
+
+  cursor: pointer;
+
+  font-size: 16px;
+
+  background: white;
+
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+#avatar {
+  width: 500px;
+
+  height: 600px;
+}
+
+.bubble {
+  position: absolute;
+
+  top: 80px;
+
+  right: 180px;
+
+  background: white;
+
+  padding: 20px;
+
+  border-radius: 30px;
+
+  font-size: 20px;
+
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.avatar-section {
+  width: 500px;
+  height: 600px;
+
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+.character {
+  position: relative;
+
+  width: 250px;
+
+  height: 450px;
+
+  animation: float 3s infinite ease-in-out;
+}
+
+.head {
+  position: absolute;
+
+  top: 50px;
+
+  left: 55px;
+
+  width: 140px;
+
+  height: 140px;
+
+  background: linear-gradient(145deg, #ffd7a8, #f5b87a);
+
+  border-radius: 50%;
+
+  box-shadow: inset -10px -10px 20px #d9945b;
+
+  z-index: 3;
+}
+
+.hair {
+  position: absolute;
+
+  width: 145px;
+
+  height: 70px;
+
+  background: #351b10;
+
+  border-radius: 80px 80px 20px 20px;
+
+  top: -10px;
+}
+.eye {
+  position: absolute;
+
+  top: 60px;
+
+  width: 18px;
+
+  height: 25px;
+
+  background: #111;
+
+  border-radius: 50%;
+
+  animation: blink 4s infinite;
+}
+
+.left-eye {
+  left: 35px;
+}
+
+.right-eye {
+  right: 35px;
+}
+
+@keyframes blink {
+  0%,
+  90%,
+  100% {
+    height: 25px;
+  }
+
+  95% {
+    height: 3px;
+  }
+}
+.smile {
+  position: absolute;
+
+  bottom: 35px;
+
+  left: 50px;
+
+  width: 40px;
+
+  height: 20px;
+
+  background: #ff5c70;
+
+  border-radius: 0 0 30px 30px;
+}
+.hoodie {
+  position: absolute;
+
+  top: 180px;
+
+  left: 50px;
+
+  width: 150px;
+
+  height: 170px;
+
+  background: linear-gradient(135deg, #5746ff, #3628aa);
+
+  border-radius: 40px 40px 20px 20px;
+
+  box-shadow: 0 20px 30px #5555;
+}
+
+.logo {
+  font-size: 45px;
+
+  text-align: center;
+
+  padding-top: 50px;
+}
+.arm {
+  position: absolute;
+
+  font-size: 65px;
+
+  top: 220px;
+}
+
+.left-arm {
+  left: -20px;
+
+  animation: leftHand 2s infinite;
+}
+
+.right-arm {
+  right: -30px;
+
+  animation: rightHand 2s infinite;
+}
+
+@keyframes leftHand {
+  50% {
+    transform: rotate(-40deg) translateY(-30px);
+  }
+}
+
+@keyframes rightHand {
+  50% {
+    transform: rotate(40deg) translateY(-40px);
+  }
+}
+.leg {
+  position: absolute;
+
+  bottom: 0;
+
+  width: 35px;
+
+  height: 100px;
+
+  background: #222;
+
+  border-radius: 20px;
+}
+
+.left-leg {
+  left: 75px;
+}
+
+.right-leg {
+  right: 75px;
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-25px);
+  }
+}
