@@ -32,7 +32,6 @@ renderer.setSize(500, 600);
 
 document.getElementById("avatar").appendChild(renderer.domElement);
 
-// Light
 
 const light = new THREE.HemisphereLight(
   0xffffff,
