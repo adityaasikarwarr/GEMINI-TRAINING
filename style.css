@@ -1,279 +1,117 @@
 body {
-  margin: 0;
-
-  height: 100vh;
-
-  overflow: hidden;
-
-  font-family: Poppins, Arial;
-
-  background: linear-gradient(135deg, #8be9fd, #c77dff);
-}
-
-.hero {
-  height: 100vh;
-
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  background-color: #21242d;
   display: flex;
-
-  align-items: center;
-
   justify-content: center;
-
-  gap: 100px;
+  padding: 40px 20px;
+  margin: 0;
 }
 
-.text {
-  color: white;
+.resume-card {
+  background-color: #ffffff;
+  max-width: 650px;
+  width: 100%;
+  padding: 50px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
 
-  width: 350px;
+.name-container {
+  margin-bottom: 25px;
 }
 
 h1 {
-  font-size: 45px;
+  color: #11133c;
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin: 0 0 5px 0;
+  display: inline-block;
+  border-bottom: 5px solid #8e24aa;
+  padding-bottom: 8px;
 }
 
-button {
-  padding: 15px 25px;
+h2.title {
+  color: #7b1fa2;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin: 0 0 20px 0;
+}
 
+p.description {
+  color: #555555;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0 0 15px 0;
+  font-weight: 400;
+}
+
+hr.divider {
   border: none;
-
-  border-radius: 30px;
-
-  margin: 10px;
-
-  cursor: pointer;
-
-  font-size: 16px;
-
-  background: white;
-
-  transition: 0.3s;
+  border-top: 1px solid #e0e0e0;
+  margin: 35px 0 25px 0;
 }
 
-button:hover {
-  transform: scale(1.1);
+h3.skills-title {
+  color: #7b1fa2;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 15px 0;
 }
 
-#avatar {
-  width: 500px;
-
-  height: 600px;
-}
-
-.bubble {
-  position: absolute;
-
-  top: 80px;
-
-  right: 180px;
-
-  background: white;
-
-  padding: 20px;
-
-  border-radius: 30px;
-
-  font-size: 20px;
-
-  animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-  50% {
-    transform: translateY(-15px);
-  }
-}
-
-.avatar-section {
-  width: 500px;
-  height: 600px;
-
-  position: relative;
-
+.skills-container {
   display: flex;
-
-  justify-content: center;
-
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
-.character {
-  position: relative;
-
-  width: 250px;
-
-  height: 450px;
-
-  animation: float 3s infinite ease-in-out;
+.skill {
+  padding: 8px 18px;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
-.head {
-  position: absolute;
-
-  top: 50px;
-
-  left: 55px;
-
-  width: 140px;
-
-  height: 140px;
-
-  background: linear-gradient(145deg, #ffd7a8, #f5b87a);
-
-  border-radius: 50%;
-
-  box-shadow: inset -10px -10px 20px #d9945b;
-
-  z-index: 3;
+.skill.html {
+  background-color: #e8e0fa;
+  color: #5c35b1;
 }
 
-.hair {
-  position: absolute;
-
-  width: 145px;
-
-  height: 70px;
-
-  background: #351b10;
-
-  border-radius: 80px 80px 20px 20px;
-
-  top: -10px;
-}
-.eye {
-  position: absolute;
-
-  top: 60px;
-
-  width: 18px;
-
-  height: 25px;
-
-  background: #111;
-
-  border-radius: 50%;
-
-  animation: blink 4s infinite;
+.skill.css {
+  background-color: #dceaf6;
+  color: #1976d2;
 }
 
-.left-eye {
-  left: 35px;
+.skill.js {
+  background-color: #fdf0c3;
+  color: #3e2723;
 }
 
-.right-eye {
-  right: 35px;
+.skill.bootstrap {
+  background-color: #e8e0fa;
+  color: #5c35b1;
 }
 
-@keyframes blink {
-  0%,
-  90%,
-  100% {
-    height: 25px;
-  }
-
-  95% {
-    height: 3px;
-  }
+.skill.git {
+  background-color: #fae3ed;
+  color: #c2185b;
 }
-.smile {
-  position: absolute;
-
-  bottom: 35px;
-
-  left: 50px;
-
-  width: 40px;
-
-  height: 20px;
-
-  background: #ff5c70;
-
-  border-radius: 0 0 30px 30px;
+.skill.React {
+  background-color: #4eb4d0;
+  color: black;
 }
-.hoodie {
-  position: absolute;
-
-  top: 180px;
-
-  left: 50px;
-
-  width: 150px;
-
-  height: 170px;
-
-  background: linear-gradient(135deg, #5746ff, #3628aa);
-
-  border-radius: 40px 40px 20px 20px;
-
-  box-shadow: 0 20px 30px #5555;
-}
-
-.logo {
-  font-size: 45px;
-
-  text-align: center;
-
-  padding-top: 50px;
-}
-.arm {
-  position: absolute;
-
-  font-size: 65px;
-
-  top: 220px;
-}
-
-.left-arm {
-  left: -20px;
-
-  animation: leftHand 2s infinite;
-}
-
-.right-arm {
-  right: -30px;
-
-  animation: rightHand 2s infinite;
-}
-
-@keyframes leftHand {
-  50% {
-    transform: rotate(-40deg) translateY(-30px);
-  }
-}
-
-@keyframes rightHand {
-  50% {
-    transform: rotate(40deg) translateY(-40px);
-  }
-}
-.leg {
-  position: absolute;
-
-  bottom: 0;
-
-  width: 35px;
-
-  height: 100px;
-
-  background: #222;
-
-  border-radius: 20px;
-}
-
-.left-leg {
-  left: 75px;
-}
-
-.right-leg {
-  right: 75px;
-}
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-25px);
-  }
+.skill.Node {
+  background-color: #021c17;
+  color: #c2185b;
 }
