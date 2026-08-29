@@ -1,4 +1,43 @@
+/* =========================================================
+   PROFESSIONAL ANIMATED RESUME CARD
+   ========================================================= */
+
+:root {
+  --bg-dark: #080a12;
+  --bg-dark-2: #111522;
+
+  --purple: #7c3aed;
+  --purple-dark: #5b21b6;
+  --blue: #2563eb;
+  --cyan: #06b6d4;
+  --pink: #ec4899;
+
+  --text-dark: #111426;
+  --text-gray: #626779;
+}
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
 body {
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 60px 24px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
   font-family:
     system-ui,
     -apple-system,
@@ -11,107 +50,903 @@ body {
     "Open Sans",
     "Helvetica Neue",
     sans-serif;
-  background-color: #21242d;
-  display: flex;
-  justify-content: center;
-  padding: 40px 20px;
-  margin: 0;
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(124, 58, 237, 0.28),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(37, 99, 235, 0.25),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(236, 72, 153, 0.16),
+      transparent 35%
+    ),
+    linear-gradient(135deg, var(--bg-dark), var(--bg-dark-2), #090b13);
+
+  background-attachment: fixed;
+
+  overflow-x: hidden;
 }
+
+/* =========================================================
+   BACKGROUND ANIMATION
+   ========================================================= */
+
+body::before,
+body::after {
+  content: "";
+
+  position: fixed;
+
+  width: 320px;
+  height: 320px;
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  opacity: 0.22;
+
+  pointer-events: none;
+
+  z-index: -1;
+
+  animation: backgroundFloat 10s ease-in-out infinite alternate;
+}
+
+body::before {
+  background: var(--purple);
+
+  top: -120px;
+  left: -120px;
+}
+
+body::after {
+  background: var(--blue);
+
+  right: -120px;
+  bottom: -120px;
+
+  animation-delay: 3s;
+}
+
+/* =========================================================
+   RESUME CARD
+   ========================================================= */
 
 .resume-card {
-  background-color: #ffffff;
-  max-width: 650px;
+  position: relative;
+
   width: 100%;
-  padding: 50px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 760px;
+
+  padding: 56px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.99),
+    rgba(248, 249, 255, 0.97)
+  );
+
+  border-radius: 22px;
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.28),
+    0 15px 35px rgba(0, 0, 0, 0.14);
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  transform: translateY(70px) scale(0.92) rotateX(8deg);
+
+  transform-origin: center;
+
+  animation: cardEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  transition:
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.5s ease;
 }
+
+/* =========================================================
+   ANIMATED TOP BORDER
+   ========================================================= */
+
+.resume-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 5px;
+
+  background: linear-gradient(
+    90deg,
+    #5b21b6,
+    #7c3aed,
+    #ec4899,
+    #2563eb,
+    #06b6d4,
+    #5b21b6
+  );
+
+  background-size: 300% 100%;
+
+  animation: borderFlow 4s linear infinite;
+}
+
+/* =========================================================
+   CARD MOVING GLOW
+   ========================================================= */
+
+.resume-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  top: -150px;
+  right: -100px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(124, 58, 237, 0.15),
+    transparent 70%
+  );
+
+  pointer-events: none;
+
+  animation: cardGlow 7s ease-in-out infinite alternate;
+}
+
+/* =========================================================
+   NAME CONTAINER
+   ========================================================= */
 
 .name-container {
-  margin-bottom: 25px;
+  position: relative;
+
+  margin-bottom: 32px;
+
+  animation: fadeUp 0.7s 0.15s ease both;
 }
+
+/* =========================================================
+   PROFILE LABEL
+   ========================================================= */
+
+.name-container::before {
+  content: "PROFILE";
+
+  display: block;
+
+  width: fit-content;
+
+  margin-bottom: 13px;
+
+  padding: 5px 12px;
+
+  border-radius: 100px;
+
+  background: rgba(124, 58, 237, 0.09);
+
+  color: var(--purple);
+
+  font-size: 0.68rem;
+
+  font-weight: 850;
+
+  letter-spacing: 2px;
+}
+
+/* =========================================================
+   NAME
+   ========================================================= */
 
 h1 {
-  color: #11133c;
-  font-size: 2.8rem;
-  font-weight: 800;
-  margin: 0 0 5px 0;
+  position: relative;
+
   display: inline-block;
-  border-bottom: 5px solid #8e24aa;
-  padding-bottom: 8px;
+
+  margin: 0;
+
+  padding-bottom: 15px;
+
+  color: transparent;
+
+  background: linear-gradient(
+    100deg,
+    #111426 10%,
+    #33206b 45%,
+    var(--purple) 75%,
+    var(--blue) 100%
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  font-size: clamp(2.5rem, 7vw, 4.2rem);
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  letter-spacing: -2.5px;
+
+  animation: nameReveal 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+/* =========================================================
+   NAME UNDERLINE
+   ========================================================= */
+
+h1::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 55%;
+  height: 5px;
+
+  border-radius: 100px;
+
+  background: linear-gradient(90deg, var(--purple), var(--pink), transparent);
+
+  transform-origin: left;
+
+  animation: underlineReveal 0.8s 0.6s ease both;
+}
+
+/* =========================================================
+   JOB TITLE
+   ========================================================= */
 
 h2.title {
-  color: #7b1fa2;
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  margin: 0 0 20px 0;
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  margin: 15px 0 23px;
+
+  color: var(--purple-dark);
+
+  font-size: 0.92rem;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+
+  animation: fadeUp 0.7s 0.3s ease both;
 }
+
+/* =========================================================
+   TITLE DOT
+   ========================================================= */
+
+h2.title::before {
+  content: "";
+
+  width: 8px;
+  height: 8px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, var(--purple), var(--pink));
+
+  box-shadow: 0 0 0 5px rgba(124, 58, 237, 0.1);
+
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
 
 p.description {
-  color: #555555;
-  font-size: 1.05rem;
-  line-height: 1.6;
-  margin: 0 0 15px 0;
-  font-weight: 400;
+  max-width: 660px;
+
+  margin: 0 0 20px;
+
+  color: var(--text-gray);
+
+  font-size: 1rem;
+
+  line-height: 1.85;
+
+  font-weight: 450;
+
+  animation: fadeUp 0.7s 0.4s ease both;
 }
+
+p.description::first-letter {
+  color: var(--purple);
+
+  font-size: 1.3em;
+
+  font-weight: 800;
+}
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
 
 hr.divider {
+  height: 1px;
+
   border: none;
-  border-top: 1px solid #e0e0e0;
-  margin: 35px 0 25px 0;
+
+  margin: 38px 0 30px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #dfe1ea 15%,
+    #dfe1ea 85%,
+    transparent
+  );
+
+  transform-origin: center;
+
+  animation: expandWidth 0.8s 0.5s ease both;
 }
 
+/* =========================================================
+   SKILLS TITLE
+   ========================================================= */
+
 h3.skills-title {
-  color: #7b1fa2;
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin: 0 0 15px 0;
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin: 0 0 19px;
+
+  color: var(--text-dark);
+
+  font-size: 0.82rem;
+
+  font-weight: 850;
+
+  letter-spacing: 1.7px;
+
+  text-transform: uppercase;
+
+  animation: fadeUp 0.7s 0.55s ease both;
 }
+
+h3.skills-title::before {
+  content: "";
+
+  width: 4px;
+  height: 19px;
+
+  border-radius: 100px;
+
+  background: linear-gradient(180deg, var(--purple), var(--pink));
+}
+
+/* =========================================================
+   SKILLS CONTAINER
+   ========================================================= */
 
 .skills-container {
   display: flex;
+
   flex-wrap: wrap;
+
   gap: 12px;
+
+  animation: fadeUp 0.7s 0.65s ease both;
 }
+
+/* =========================================================
+   SKILL BASE
+   ========================================================= */
 
 .skill {
-  padding: 8px 18px;
-  border-radius: 25px;
-  font-size: 0.95rem;
-  font-weight: 600;
+  position: relative;
+
+  padding: 9px 17px;
+
+  border-radius: 100px;
+
+  font-size: 0.84rem;
+
+  font-weight: 750;
+
+  border: 1px solid transparent;
+
+  overflow: hidden;
+
+  cursor: default;
+
+  transition:
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s ease;
 }
+
+/* =========================================================
+   SKILL SHINE
+   ========================================================= */
+
+.skill::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 70%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.65),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.6s ease;
+}
+
+.skill:hover::before {
+  left: 150%;
+}
+
+.skill:hover {
+  transform: translateY(-5px) scale(1.04);
+
+  box-shadow: 0 12px 25px rgba(15, 23, 42, 0.13);
+}
+
+/* =========================================================
+   HTML
+   ========================================================= */
 
 .skill.html {
-  background-color: #e8e0fa;
-  color: #5c35b1;
+  background: linear-gradient(135deg, #f2ebff, #e7dcff);
+
+  color: #6536bd;
+
+  border-color: #ddd0ff;
 }
+
+/* =========================================================
+   CSS
+   ========================================================= */
 
 .skill.css {
-  background-color: #dceaf6;
-  color: #1976d2;
+  background: linear-gradient(135deg, #e9f4ff, #dcecff);
+
+  color: #1769c2;
+
+  border-color: #cbe1f9;
 }
+
+/* =========================================================
+   JAVASCRIPT
+   ========================================================= */
 
 .skill.js {
-  background-color: #fdf0c3;
-  color: #3e2723;
+  background: linear-gradient(135deg, #fff9dc, #fff0b6);
+
+  color: #5b4610;
+
+  border-color: #f3df91;
 }
+
+/* =========================================================
+   BOOTSTRAP
+   ========================================================= */
 
 .skill.bootstrap {
-  background-color: #e8e0fa;
-  color: #5c35b1;
+  background: linear-gradient(135deg, #f2ebff, #e6dcff);
+
+  color: #6536bd;
+
+  border-color: #ddd0ff;
 }
 
+/* =========================================================
+   GIT
+   ========================================================= */
+
 .skill.git {
-  background-color: #fae3ed;
+  background: linear-gradient(135deg, #fff0f5, #ffe2ec);
+
   color: #c2185b;
+
+  border-color: #ffd0df;
 }
+
+/* =========================================================
+   REACT
+   ========================================================= */
+
 .skill.React {
-  background-color: #4eb4d0;
-  color: black;
+  background: linear-gradient(135deg, #e8fbff, #d4f5ff);
+
+  color: #087c9c;
+
+  border-color: #b9eaf5;
 }
+
+/* =========================================================
+   NODE
+   ========================================================= */
+
 .skill.Node {
-  background-color: #021c17;
-  color: #c2185b;
+  background: linear-gradient(135deg, #e9f8ef, #d4f0df);
+
+  color: #176b3a;
+
+  border-color: #bde4ca;
+}
+
+/* =========================================================
+   STAGGERED SKILL ANIMATION
+   ========================================================= */
+
+.skills-container .skill:nth-child(1) {
+  animation: skillPop 0.5s 0.7s ease both;
+}
+
+.skills-container .skill:nth-child(2) {
+  animation: skillPop 0.5s 0.8s ease both;
+}
+
+.skills-container .skill:nth-child(3) {
+  animation: skillPop 0.5s 0.9s ease both;
+}
+
+.skills-container .skill:nth-child(4) {
+  animation: skillPop 0.5s 1s ease both;
+}
+
+.skills-container .skill:nth-child(5) {
+  animation: skillPop 0.5s 1.1s ease both;
+}
+
+.skills-container .skill:nth-child(6) {
+  animation: skillPop 0.5s 1.2s ease both;
+}
+
+.skills-container .skill:nth-child(7) {
+  animation: skillPop 0.5s 1.3s ease both;
+}
+
+/* =========================================================
+   CARD ENTRANCE
+   ========================================================= */
+
+@keyframes cardEntrance {
+  0% {
+    opacity: 0;
+
+    transform: translateY(70px) scale(0.92) rotateX(8deg);
+
+    filter: blur(8px);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform: translateY(-8px) scale(1.015) rotateX(-2deg);
+
+    filter: blur(0);
+  }
+
+  75% {
+    transform: translateY(3px) scale(0.995) rotateX(1deg);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: translateY(0) scale(1) rotateX(0);
+  }
+}
+
+/* =========================================================
+   FLOATING CARD
+   ========================================================= */
+
+@keyframes cardFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotateX(0) rotateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px) rotateX(0.5deg) rotateY(-0.5deg);
+  }
+}
+
+/* =========================================================
+   BORDER FLOW
+   ========================================================= */
+
+@keyframes borderFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 300% 50%;
+  }
+}
+
+/* =========================================================
+   CARD GLOW
+   ========================================================= */
+
+@keyframes cardGlow {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(-70px, 70px) scale(1.25);
+  }
+
+  100% {
+    transform: translate(-20px, 130px) scale(0.9);
+  }
+}
+
+/* =========================================================
+   CONTENT FADE
+   ========================================================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   NAME REVEAL
+   ========================================================= */
+
+@keyframes nameReveal {
+  from {
+    opacity: 0;
+
+    transform: translateX(-25px) skewX(-3deg);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateX(0) skewX(0);
+  }
+}
+
+/* =========================================================
+   UNDERLINE
+   ========================================================= */
+
+@keyframes underlineReveal {
+  from {
+    width: 0;
+
+    opacity: 0;
+  }
+
+  to {
+    width: 55%;
+
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+@keyframes expandWidth {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* =========================================================
+   SKILL POP
+   ========================================================= */
+
+@keyframes skillPop {
+  from {
+    opacity: 0;
+
+    transform: translateY(12px) scale(0.85);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================================
+   PULSE
+   ========================================================= */
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+
+    box-shadow: 0 0 0 5px rgba(124, 58, 237, 0.1);
+  }
+
+  50% {
+    transform: scale(1.15);
+
+    box-shadow: 0 0 0 8px rgba(124, 58, 237, 0.03);
+  }
+}
+
+/* =========================================================
+   BACKGROUND FLOAT
+   ========================================================= */
+
+@keyframes backgroundFloat {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(45px, 35px, 0) scale(1.15);
+  }
+}
+
+/* =========================================================
+   DESKTOP HOVER
+   ========================================================= */
+
+@media (hover: hover) {
+  .resume-card:hover {
+    transform: translateY(-12px) scale(1.01) rotateX(1deg) rotateY(-1deg);
+
+    box-shadow:
+      0 55px 110px rgba(0, 0, 0, 0.3),
+      0 20px 45px rgba(124, 58, 237, 0.15);
+  }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 700px) {
+  body {
+    padding: 30px 15px;
+  }
+
+  .resume-card {
+    padding: 40px 28px;
+
+    border-radius: 18px;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+
+    letter-spacing: -1.8px;
+  }
+
+  h2.title {
+    font-size: 0.82rem;
+  }
+
+  p.description {
+    font-size: 0.95rem;
+
+    line-height: 1.75;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+  body {
+    padding: 15px 10px;
+  }
+
+  .resume-card {
+    padding: 32px 20px;
+
+    border-radius: 15px;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2.title {
+    font-size: 0.75rem;
+  }
+
+  p.description {
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+  }
+
+  .skills-container {
+    gap: 9px;
+  }
+
+  .skill {
+    padding: 8px 14px;
+
+    font-size: 0.77rem;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
+
+  .resume-card {
+    opacity: 1;
+
+    transform: none;
+  }
 }
